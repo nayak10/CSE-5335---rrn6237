@@ -1,0 +1,77 @@
+<html>
+<head>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function() {
+$("#getData").click(function() {
+	$.getJSON('/lotsofdata', function(dat) {
+      
+  	  var WDM=dat.Web_Data_Management;
+	  var DM=dat.Data_Mining;
+	  var D=dat.Databases;
+	  var SE2=dat.Software_Engg_2;
+	  var SM=dat.Software_Metrics;
+	  var ML=dat.Machine_Learning;
+	  var CA=dat.Computer_Architecture;
+	  var DS=dat.Distributed_Systems;
+	  var A=dat.Algorithms;
+	  var ASE=dat.Advanced_Topics_SE;
+	  var CN=dat.Computer_Networks;
+	  
+	 $('#WDM').html(WDM);
+	 $('#DM').html(DM);
+	 $('#D').html(D);
+	 $('#SE2').html(SE2);
+	 $('#SM').html(SM);
+	 $('#ML').html(ML);
+	 $('#CA').html(CA);
+	 $('#DS').html(DS);
+	 $('#A').html(A);
+	 $('#ASE').html(ASE);
+	 $('#CN').html(CN);
+		});
+	});
+});
+</script>
+</head>
+<body>
+{% if name %}
+	<h1 style="color: blue;"> Course details of {{ name }}!</h1>
+{% else %}
+	<h1>Wrong Data!</h1>
+{% endif %}
+
+<button id="getData"> Get Data </button>
+</body>
+<div id='ab'>
+</div>
+<table border = 1px style="float: left;">
+<tr><td>Web Data Management</td></tr>
+<tr><td>Data Mining</td></tr>
+<tr><td>Databases</td></tr>
+<tr><td>Software Engineering 2</td></tr>
+<tr><td>Software Metrics</td></tr>
+<tr><td>Machine Learning</td></tr>
+<tr><td>Computer Architecture</td></tr>
+<tr><td>Distributed Systems</td></tr>
+<tr><td>Algorithms</td></tr>
+<tr><td>Advanced Software Engineering</td></tr>
+<tr><td>Computer Networks</td></tr>
+</table>
+
+<table  style="display: inline-block; border-spacing: 6px;" >
+<tr id='WDM'><td></td></tr>
+<tr id='DM'><td></td></tr>
+<tr id='D'><td></td></tr>
+<tr id='SE2'><td></td></tr>
+<tr id='SM'><td></td></tr>
+<tr id='ML'><td></td></tr>
+<tr id='CA'><td></td></tr>
+<tr id='DS'><td></td></tr>
+<tr id='A'><td></td></tr>
+<tr id='ASE'><td></td></tr>
+<tr id='CN'><td></td></tr>
+</table>
+
+</html>
